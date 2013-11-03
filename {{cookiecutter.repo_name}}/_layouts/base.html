@@ -3,31 +3,38 @@
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="{{ project_short_description }}">
-  <meta name="author" content="{{ name }}">
+  <meta name="description" content="{{ cookiecutter.project_short_description }}">
+  <meta name="author" content="{{ cookiecutter.name }}">
+  {% raw %}
   {% capture lvl %}{{ page.url | append:'index.html' | split:'/' | size }}{% endcapture %}
   {% capture relative %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
   <link href='http://fonts.googleapis.com/css?family=Arvo:400,700|PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
   <link href="{{ relative }}resources/css/bootstrap.min.css" rel="stylesheet">
   <link href="{{ relative }}resources/css/style.css" rel="stylesheet">
   <title>{{ page.title }}</title>
+  {% endraw %}
  </head>
  <body>
   <div class="wrapper">
    <div id="header">
     <div class="container">
-     <h1>{{ project_name }}</h1>
+     <h1>{{ cookiecutter.project_name }}</h1>
     </div>
    </div>
+   {% raw %}
    <div id="content">
     <div class="container">
       {{ content }}
     </div>
    </div>
+   {% endraw %}
   </div>
   <div id="footer">
    <div class="container">
     <a class="pull-right" href="#">Back to top</a>
+    <p>
+    {{ cookiecutter.footer_message }}
+    </p>
    </div>
   </div>
  </body>
