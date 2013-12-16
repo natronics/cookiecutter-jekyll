@@ -1,4 +1,4 @@
 cookiecutter-jekyll
 ===================
 
-A Jekyll (github pages) boilerplate for use with https://github.com/audreyr/cookiecutter
+A Jekyll (github pages) boilerplate for use with [cookiecutter](https://github.com/audreyr/cookiecutter)
